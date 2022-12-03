@@ -1,0 +1,71 @@
+<div id=D__ID>
+    <form id="F__ID">
+        <div id="header">
+            <header class="header header-fixed" id="D_6" module="header">
+              <div class="container">
+                <div class="header-inner">
+                  <div class="logo">
+                    <a href="#">
+                      <img src="images/c-logo.png" alt="SleepFix">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+          
+          <main class="main" id="content">
+            <section class="hero e-hero" style="background-image: url(images/c-bg-0.png)">
+              <div class="container">
+                <div class="hero-inner e-hero-inner not-eligible">
+                  <div class="e-hero-text eligible-box-content">
+                    <h1>Thank you for completing these questions.</h1>
+                    <p class="e-p2">Unfortunately, your answers have indicated that you are not eligible for this study.</p>
+                    <p class="e-p2" id="reason__ID"></p>
+                    <p class="e-p2">For further help, guidance, and information you may contact your General Practitioner (GP) or access the sleep Health Foundation Website <a href="https://www.sleephealthfoundation.org.au" target=_blank >Sleep Health Foundation</a></p>
+                    <p class="e-p2">Thank you for your interest in this study</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>          
+    </form>
+    <script>
+    function F__ID(){
+      //-------------------------------------
+      VmInclude:'__COMPONENT__/f/form.01.js'
+      //-------------------------------------
+      m.default_load=m.load;
+      m.load=function(){
+          //console.log("AAB: "+JSON.stringify(m.input))
+          $('#reason__ID').text('Your insomnia symptoms are above the level required to be included in this study.');
+          if(parseInt(m.input.scores.ISI)>21) {
+            $('#reason__ID').text('Your insomnia symptoms are above the level required to be included in this study.');
+          }
+          if(parseInt(m.input.scores.ISI)<8) {
+            $('#reason__ID').text('Your insomnia symptoms are below the level required to be included in this study.')
+          }
+          if(m.input.my_answers.internet=='N') {
+            $('#reason__ID').text('You need to have access to the internet and a phone.')
+          }
+          if(m.input.my_answers.fluent_english=='N') {
+            $('#reason__ID').text('You need to be fluent in English.')
+          }
+
+          if(m.input.my_answers.location=='N') {
+            $('#reason__ID').text('You need to currently live in Australia.')
+          }
+          if(m.input.my_answers.age=='N') {
+            $('#reason__ID').text('You need to be aged between 18 and 65 to participate in this study.')
+          }
+          m.default_load();
+          $('#D__ID').scrollTop(0);
+          $(window).scrollTop(0);
+      }
+    }
+    </script>
+    <style>
+        VmInclude:__HOST__/css/style.css
+
+    </style>
+</div>

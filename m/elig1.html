@@ -1,0 +1,51 @@
+<div id=D__ID>
+    <form id="F__ID">
+        <div id="header">
+            <header class="header header-fixed" id="D_6" module="header">
+              <div class="container">
+                <div class="header-inner">
+                  <div class="logo">
+                    <a href="#">
+                      <img src="images/c-logo.png" alt="SleepFix">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </div>
+          
+          <main class="main" id="content">
+            <section class="hero e-hero" style="background-image: url(images/c-bg-0.png)">
+              <div class="container">
+                <div class="hero-inner e-hero-inner not-eligible">
+                  <div class="e-hero-text eligible-box-content">
+                    <h1>THANK YOU!</h1>
+                    <p class="e-p1">A member of the study team will shortly contact you to discuss the study over the phone</p>
+                    <p class="e-p1"></p>
+                    <p class="e-p1"></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>          
+    </form>
+    <script>
+    function F__ID(){
+      //-------------------------------------
+      VmInclude:'__COMPONENT__/f/form.01.js'
+      //-------------------------------------
+      m.default_load=m.load;
+      m.load=function(){
+          console.log("AA: "+JSON.stringify(m))
+          m.default_load();
+          $('#D__ID').scrollTop(0);
+          $(window).scrollTop(0);
+      }
+
+    }
+    </script>
+    <style>
+        VmInclude:__CURRENT_PATH__/../../css/style.css
+
+    </style>
+</div>

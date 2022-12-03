@@ -1,0 +1,144 @@
+<div id=D__ID>
+    <div id="header">
+        <header class="header header-fixed">
+          <div class="container">
+            <div class="header-inner">
+              <div class="logo">
+                <a href="#">
+                  <img src="images/woolcock canrest.png" style="width:80%" alt="SleepFix" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      <main class="main" id="content">
+        <section class="hero c-hero background-size-l" style="background-image: url(images/c-bg-2.png)">
+          <div class="container">
+            <div class="hero-inner">
+              <div class="hero-text">
+                <h1>
+                  Welcome to the CANRest <br />
+                  Research Study
+                </h1>
+              </div>
+            </div>
+            <div class="text-info c-hero-text-info">
+              <p>We invite you to participate in an exciting new research study to determine the effect of a potential new cannabis medication in reducing insomnia.</p>
+            </div>
+          </div>
+        </section>
+        <section class="consumer" >
+          <div class="container">
+            <h2>You may be eligible to participate if you:</h2>
+            <div class="consumer-list">
+              <div class="consumer-item">
+                <div class="consumer-img">
+                  <img src="images/c-circle-1.png" alt="image description" />
+                </div>
+                <span class="consumer-text">Are aged 18 to 65 years</span>
+              </div>
+              <div class="consumer-item">
+                <div class="consumer-img">
+                  <img src="images/c-circle-2.png" alt="image description" />
+                </div>
+                <span class="consumer-text">Currently live in Australia</span>
+              </div>
+              <div class="consumer-item">
+                <div class="consumer-img">
+                  <img src="images/c-circle-3.png" alt="image description" />
+                </div>
+                <span class="consumer-text">Have difficulties staying and falling asleep</span>
+              </div>
+              <div class="consumer-item">
+                <div class="consumer-img">
+                  <img src="images/c-circle-4.png" alt="image description" />
+                </div>
+                <span class="consumer-text">Have internet and Phone Access</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="cti">
+          <div class="container">
+            <div class="cti-wrap">
+              <div class="cti-box align-end">
+                <div class="cti-img">
+                  <img src="images/c-img-2.png" alt="medicine" />
+                </div>
+              </div>
+              <div class="cti-box">
+                <div class="cti-text caveat">
+                  <p>This research study is testing a chemical found in the cannabis plant, cannabidiol, which has been shown to improve sleep.</p>
+                </div>
+              </div>
+              <div class="cti-box align-start">
+                <div class="cti-img">
+                  <img src="images/c-img-1.png" alt="medicine" />
+                </div>
+              </div>
+            </div>
+            <div class="cti-wrap margin-b-0">
+              <div class="cti-box margin-b-0">
+                <div class="cti-text">
+                  <span class="icon-check"></span>
+                  <p>The study is specifically testing two different doses of cannabidiol on reducing insomnia symptoms.</p>
+                </div>
+              </div>
+              <div class="cti-box margin-b-0">
+                <div class="cti-text">
+                  <span class="icon-check"></span>
+                  <p>It will be conducted totally online with no face-to-face visits to the research institute.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="cta" >
+          <div class="container">
+            <div class="cta-inner">
+              <div class="cta-text">
+                <h2>Screening Questionnaires</h2>
+                <p class="text-transparent text-lead">
+                    If eligible you will be required to take cannabidiol or placebo (inactive capsule) for 8 weeks, complete questionnaires and wear a wristwatch that measures your sleep patterns for one week before treatment and for one week towards the end of treatment. We will also require a fasting blood and urine sample before and towards the end of the treatment period. If you are eligible and participate in the study, you will receive renumeration for your time and there will be no out of pocket expense to you. 
+                </p>
+                <p class="text-transparent text-lead">
+                    If you are interested to learn more and find out if this study is suitable for you, please complete the screening questionnaire by answering the following statement:
+                </p>
+                <div class="btn-holder">
+                    <p><strong>I agree to complete a screening questionnaire to find out if this study is suitable for me:</strong></p>
+                    <button id="yes__ID" class="btn btn-white">YES, I AGREE</button> <button id="no__ID" class="btn btn-white">No THANKS</button>
+                  </div>
+                  <div id="message__ID" style='display:none'>                
+                      <p class="text-transparent text-lead">
+                          Completing questionnaires is necessary to be part of the study.                  
+                      </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="info" >
+            <div class="container">
+              <div class="info-inner">
+                <p>This study has received ethical approval from Bellberry Human Research Ethics Committee (ref: HREC2021-09-1049) and is sponsored by BOD Ltd.</p>
+            </div>
+            </div>
+          </div>
+        </main>
+  
+	<script>
+		function F__ID(){
+			var m=$vm.module_list['__MODULE__'];
+			if(m.prefix==undefined) m.prefix="";
+            //console.log("AAA: "+JSON.stringify(m.input))
+			$('#yes__ID').on('click',function(){	$vm.load_module(m.prefix+'recruitment-form','',{});	})
+			$('#no__ID').on('click',function(){		$('#message__ID').css('display','block')})
+		}
+		$vm.home_ready=1;
+	</script>
+	<style>
+        VmInclude:__HOST__/css/style.css
+	</style>
+</div>

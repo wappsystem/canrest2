@@ -1,0 +1,91 @@
+<div id=D__ID>
+	<!--third html start -->
+		<div class="container mt-95 mb-3">
+		  	<div class="row" >
+			<!-- form container start -->
+				<div class="col-12 col-lg-12 col-md-12 col-sm-12 mx-auto formbox">
+			  		<div class="row">
+						<div class="col-12">
+				  		<!-- form start -->
+				  		<form id="F__ID">
+							<h3 id=title__ID ></h3>
+                            <div class="form-group">
+                                <h4>Willing to participate in study</h4>
+                                <div class="questiongroup ">
+                                  <fieldset class="subquestions">
+                                    <label class="radiobuttons">
+                                      <input type="radio" name="participate" value="N" >
+                                      <span class="checkmark"></span> No</label><br>
+                                    <label class="radiobuttons">
+                                      <input type="radio" name="participate" value="Y">
+                                      <span class="checkmark"></span> Yes</label><br>
+                                  </fieldset>
+                                </div>
+                              </div>
+
+							<button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
+							<hr>
+							<div id=dynamic_part__ID></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		//---------------------------------------------
+		function F__ID(){
+			//-------------------------------------
+			VmInclude:'__COMPONENT__/f/form.01.js'
+			//-------------------------------------
+            var fields="first_name,last_name,email,phone";
+            fields+=",availability,availability_additional";
+            fields+=",age,location,fluent_english,internet";
+            fields+=",ISI_1,ISI_2,ISI_3,ISI_4,ISI_5,ISI_6,ISI_7,ISI";
+            fields+=",shiftwork,travel,illnesses,depression,heart_failure,epilepsy,bipolar,dementia,sleep_disorders,osa,rls";
+            fields+=",map_age,gender,weight,height,bmi,MAP_1,MAP_2,MAP_3,MAP";
+            fields+=",medication,sleep_medication,diazepam,flunitrazepam,lorazepam,melatonin,nitrazepam,oxazepam,temazepam,zopiclone,zolpidem";
+            fields+=",cpap,mas,therapy,cannabis,PHQ_9,urine_sample,swallowing_capsules,overseas,pregnant";
+			var fs = fields.split(',');
+			var txt = "";
+            console.log("0:"+ 0%4);
+            console.log("0:"+ 1%4);
+            console.log("0:"+ 2%4);
+            console.log("0:"+ 3%4);
+            console.log("0:"+ 4%4);
+			for (var i = 0; i < fs.length; i++) {
+                if(i%4==0){
+                    txt += '<div class="form-group">\r\n';
+                    txt += '<div class="questiongroup">\r\n';
+                    txt += '<fieldset class="">\r\n';
+                    txt += '<div class=row>';
+                }
+				txt += '<div class="col-sm-3"><label><span class="">' + fs[i].replace(/_/g, ' ') + '</span>\r\n';
+				txt += '<input class="form-control" type="text" name="' + fs[i] + '" readonly >\r\n';
+				txt += '</label></div>\r\n';
+                if(i%4==3 || i==fs.length-1){
+                    txt += '</div>';
+				    txt += '</fieldset>\r\n';
+				    txt += '</div>\r\n';
+				    txt += '</div>\r\n';
+                }
+			}
+			$('#dynamic_part__ID').html(txt);
+
+			var load2=m.load;
+			m.load=function(){
+				load2();
+				$('#title__ID').html($vm.module_list[$vm.vm['__ID'].name].task_name);
+			}
+			//-------------------------------------
+		}
+	</script>
+	<style>
+		#D__ID .mt-95 {
+			max-width:800px;
+		}
+        VmInclude:__HOST__/css/style.css 
+        VmInclude:__HOST__/css/wappsystem-form.css
+	</style>
+</div>
+		
